@@ -129,10 +129,10 @@ function expect(status, result, extraErrorMessage) {
     }
 }
 
-//Uploads zip file, creates new version and deploys it
+//Uploads jar file, creates new version and deploys it
 function deployNewVersion(application, environmentName, versionLabel, versionDescription, file, waitUntilDeploymentIsFinished, waitForRecoverySeconds) {
 
-    let s3Key = `/${application}/${versionLabel}.zip`;
+    let s3Key = `/${application}/${versionLabel}.jar`;
     let bucket, deployStart, fileBuffer;
 
     readFile(file).then(result => {
@@ -259,7 +259,7 @@ function main() {
 
     } else { //Running as command line script
         if (process.argv.length < 6) {
-            console.log('\nbeanstalk-deploy: Deploy a zip file to AWS Elastic Beanstalk');
+            console.log('\nbeanstalk-deploy: Deploy a jar file to AWS Elastic Beanstalk');
             console.log('https://github.com/einaregilsson/beanstalk-deploy\n');
             console.log('Usage: beanstalk-deploy.js <application> <environment> <versionLabel> <region> [<filename>]\n');
             console.log('Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be defined for the program to work.');
