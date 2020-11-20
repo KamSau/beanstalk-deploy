@@ -260,7 +260,7 @@ function main() {
     } else { //Running as command line script
         if (process.argv.length < 6) {
             console.log('\nbeanstalk-deploy: Deploy a jar file to AWS Elastic Beanstalk');
-            console.log('https://github.com/einaregilsson/beanstalk-deploy\n');
+            console.log('https://github.com/KamSau/beanstalk-deploy\n');
             console.log('Usage: beanstalk-deploy.js <application> <environment> <versionLabel> <region> [<filename>]\n');
             console.log('Environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be defined for the program to work.');
             console.log('If <filename> is skipped the script will attempt to deploy an existing version named <versionLabel>.\n');
@@ -278,7 +278,7 @@ function main() {
     }
 
     console.log('Beanstalk-Deploy: GitHub Action for deploying to Elastic Beanstalk.');
-    console.log('https://github.com/einaregilsson/beanstalk-deploy');
+    console.log('https://github.com/KamSau/beanstalk-deploy');
     console.log('');
 
     if (!awsApiRequest.region) {
